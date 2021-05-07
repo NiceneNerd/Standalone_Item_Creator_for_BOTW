@@ -3,7 +3,6 @@ import json, shutil
 import os
 import sys
 from copy import deepcopy
-import PySimpleGUI as sg
 from PyQt5 import QtCore
 from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import QApplication, QMainWindow, QCompleter, QWidget
@@ -374,6 +373,7 @@ class Window(QMainWindow, Ui_SIC):
 
 
 def main():
+    QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
     app = QApplication(sys.argv)
     win = Window()
     win.setFixedSize(win.size())
